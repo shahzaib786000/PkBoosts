@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0b0b12">
+<title>PulseBoost — Social Engagement Tools</title>
+<style>
+:root{--bg:#090a10;--panel:#12131d;--panel2:#191a27;--line:#2b2d40;--text:#f6f7fb;--muted:#9da1b7;--pink:#ff4f9a;--cyan:#68e4dc;--purple:#8a6cff}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at top right,#211438 0,transparent 38%),var(--bg);color:var(--text);font:16px/1.5 system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
+a{color:inherit}.wrap{max-width:1050px;margin:auto;padding:0 20px}
+header{border-bottom:1px solid #ffffff12;background:#090a10cc;backdrop-filter:blur(14px);position:sticky;top:0;z-index:3}
+.nav{height:72px;display:flex;align-items:center;justify-content:space-between;gap:15px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:850;letter-spacing:-.5px;font-size:21px;text-decoration:none}
+.logo{display:grid;place-items:center;width:36px;height:36px;border-radius:12px;background:linear-gradient(135deg,var(--pink),var(--purple));font-size:19px}
+.nav small{color:var(--muted)}.hero{padding:52px 0 30px;text-align:center}
+.eyebrow{display:inline-flex;gap:8px;align-items:center;border:1px solid #ffffff1c;background:#ffffff08;color:#d9d9e8;border-radius:30px;padding:7px 12px;font-size:12px}
+.dot{width:7px;height:7px;border-radius:50%;background:var(--cyan);box-shadow:0 0 12px var(--cyan)}
+h1{font-size:clamp(34px,7vw,62px);line-height:1.04;letter-spacing:-2px;margin:20px auto 15px;max-width:760px}
+.grad{background:linear-gradient(90deg,var(--pink),#bd9bff,var(--cyan));background-clip:text;color:transparent}
+.hero p{max-width:610px;margin:0 auto;color:var(--muted);font-size:16px}
+.notice{margin:26px auto 0;max-width:750px;padding:13px 15px;border:1px solid #68e4dc30;border-radius:13px;background:#68e4dc0b;color:#b9e9e5;text-align:left;font-size:13px}
+.tools{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px;padding:20px 0 42px}
+.card{background:linear-gradient(145deg,#171824,#11121b);border:1px solid var(--line);border-radius:18px;padding:20px;min-height:225px;display:flex;flex-direction:column;transition:.2s}
+.card:hover{border-color:#66548d;transform:translateY(-2px)}
+.icon{width:44px;height:44px;border-radius:14px;display:grid;place-items:center;font-size:21px;background:#ff4f9a18;border:1px solid #ff4f9a32}
+.card:nth-child(2) .icon,.card:nth-child(5) .icon{background:#68e4dc12;border-color:#68e4dc35}
+.card:nth-child(3) .icon,.card:nth-child(6) .icon{background:#8a6cff18;border-color:#8a6cff38}
+.card h2{font-size:18px;margin:15px 0 5px}.card p{font-size:13px;color:var(--muted);margin:0 0 18px;flex:1}
+.btn{border:0;cursor:pointer;text-decoration:none;text-align:center;display:block;border-radius:11px;padding:11px 13px;font-weight:750;color:#101018;background:linear-gradient(90deg,var(--pink),#b79cff);font-size:14px}
+.btn.secondary{color:#f3f3fb;background:#252638;border:1px solid #3b3d54}
+.status{display:none;margin-top:12px;padding:12px;border-radius:11px;background:#090a10;border:1px solid var(--line);font-size:13px;color:#d6d8e8}
+.status.show{display:block}.status label{display:block;color:var(--muted);font-size:12px;margin-bottom:5px}
+input,select{width:100%;background:#171824;color:white;border:1px solid #393b51;border-radius:9px;padding:11px;margin:4px 0 10px;font:inherit;font-size:14px}
+footer{border-top:1px solid #ffffff12;padding:24px 0 36px;color:var(--muted);font-size:12px}
+.foot{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}.fine{max-width:700px;margin-top:12px}
+@media(max-width:760px){.tools{grid-template-columns:repeat(2,minmax(0,1fr))}.hero{padding-top:38px}}
+@media(max-width:480px){.wrap{padding:0 14px}.tools{grid-template-columns:1fr;gap:12px}.card{min-height:unset}.nav{height:64px}.nav small{font-size:11px}.hero p{font-size:14px}h1{letter-spacing:-1.3px}}
+</style>
+</head>
+<body>
+<header><div class="wrap nav">
+<a class="brand" href="#"><span class="logo">✦</span> PulseBoost</a>
+<small>Creator toolkit · Demo</small>
+</div></header>
+<main class="wrap">
+<section class="hero">
+<div class="eyebrow"><span class="dot"></span> SOCIAL CREATOR TOOLKIT</div>
+<h1>Grow smarter.<br><span class="grad">Create with impact.</span></h1>
+<p>A clean dashboard concept for creators to plan content, review engagement and keep track of their social goals.</p>
+<div class="notice">✨ <strong>Demo mode:</strong> These are interface previews and planning tools. This site does not generate fake followers, likes or views, and never asks for your TikTok password.</div>
+</section>
+<section class="tools" aria-label="Creator tools">
+<article class="card">
+<div class="icon">♡</div><h2>Engagement Planner</h2>
+<p>Set a target for likes and comments, then create a simple engagement plan for your next post.</p>
+<button class="btn" onclick="openTool('planner')">Open planner</button>
+<div class="status" id="planner"><label>Post goal</label><select id="goal"><option>Improve comments</option><option>Increase saves</option><option>Encourage shares</option><option>Build a posting habit</option></select><label>Target actions</label><input id="target" type="number" min="1" max="1000000" value="100" /><button class="btn secondary" onclick="makePlan()">Create plan</button><p id="planResult"></p></div>
+</article>
+<article class="card">
+<div class="icon">◷</div><h2>Post Scheduler</h2>
+<p>Pick a date and time for your next video and keep your publishing routine organised.</p>
+<button class="btn" onclick="openTool('scheduler')">Plan a post</button>
+<div class="status" id="scheduler"><label>Post date</label><input id="postDate" type="date"><label>Post time</label><input id="postTime" type="time" value="19:00"><button class="btn secondary" onclick="saveSchedule()">Save local plan</button><p id="scheduleResult"></p></div>
+</article>
+<article class="card">
+<div class="icon">▤</div><h2>Caption Studio</h2>
+<p>Draft a caption with a call to action and relevant hashtag ideas for your content topic.</p>
+<button class="btn" onclick="openTool('caption')">Write caption</button>
+<div class="status" id="caption"><label>Video topic</label><input id="topic" placeholder="e.g. wedding decor ideas"><label>Style</label><select id="style"><option>Friendly</option><option>Funny</option><option>Professional</option><option>Inspirational</option></select><button class="btn secondary" onclick="makeCaption()">Generate draft</button><p id="captionResult"></p></div>
+</article>
+<article class="card">
+<div class="icon">▥</div><h2>Engagement Tracker</h2>
+<p>Enter public post metrics to calculate an engagement rate estimate for your own analysis.</p>
+<button class="btn" onclick="openTool('tracker')">Track metrics</button>
+<div class="status" id="tracker"><label>Likes</label><input id="likes" type="number" min="0" value="120"><label>Comments</label><input id="comments" type="number" min="0" value="12"><label>Views</label><input id="views" type="number" min="1" value="2000"><button class="btn secondary" onclick="trackMetrics()">Calculate rate</button><p id="trackerResult"></p></div>
+</article>
+<article class="card">
+<div class="icon">#</div><h2>Hashtag Ideas</h2>
+<p>Get starter hashtag suggestions from a topic. Review each tag for relevance before posting.</p>
+<button class="btn" onclick="openTool('hashtags')">Find ideas</button>
+<div class="status" id="hashtags"><label>Topic</label><input id="hashTopic" placeholder="e.g. cooking"><button class="btn secondary" onclick="makeHashtags()">Suggest tags</button><p id="hashResult"></p></div>
+</article>
+<article class="card">
+<div class="icon">◎</div><h2>Creator Checklist</h2>
+<p>Use a quick checklist to prepare a video before publishing and encourage genuine interaction.</p>
+<button class="btn" onclick="openTool('checklist')">Open checklist</button>
+<div class="status" id="checklist">
+<label><input type="checkbox" style="width:auto;margin-right:8px"> Hook is clear in first 2 seconds</label>
+<label><input type="checkbox" style="width:auto;margin-right:8px"> Captions are readable</label>
+<label><input type="checkbox" style="width:auto;margin-right:8px"> Cover frame is selected</label>
+<label><input type="checkbox" style="width:auto;margin-right:8px"> Caption and tags are relevant</label>
+<label><input type="checkbox" style="width:auto;margin-right:8px"> Video is accessible and original</label>
+</div>
+</article>
+</section>
+</main>
+<footer><div class="wrap"><div class="foot"><span>© 2026 PulseBoost · Independent demo project</span><span>Made for creators</span></div><p class="fine">PulseBoost is not affiliated with TikTok. No login, password, automated engagement, or third-party account access is used. Engagement metrics are estimates and should be interpreted in context.</p></div></footer>
+<script>
+function openTool(id){document.querySelectorAll('.status').forEach(x=>{if(x.id!==id)x.classList.remove('show')});document.getElementById(id).classList.toggle('show')}
+function makePlan(){let g=document.getElementById('goal').value,t=Math.max(1,Number(document.getElementById('target').value)||1);document.getElementById('planResult').textContent=`Your goal: ${g}. Aim for ${t.toLocaleString()} genuine actions over time. Try a clear opening, a relevant question, and reply thoughtfully to comments.`}
+function saveSchedule(){let d=document.getElementById('postDate').value,t=document.getElementById('postTime').value;document.getElementById('scheduleResult').textContent=d?`Local plan set for ${d} at ${t}. This demo does not publish automatically.`:'Please choose a date first.'}
+function makeCaption(){let topic=document.getElementById('topic').value.trim()||'my latest video',s=document.getElementById('style').value;let open={Friendly:'Come along as I share',Funny:'POV: you thought this would be easy —',Professional:'Here is a closer look at',Inspirational:'Small ideas can make a big difference. Today:'}[s];document.getElementById('captionResult').textContent=`${open} ${topic}! ✨ What would you try first? Share your thoughts below. #CreatorTips #${topic.replace(/[^a-z0-9]/gi,'')} #ForYou`; }
+function trackMetrics(){let l=Math.max(0,Number(document.getElementById('likes').value)||0),c=Math.max(0,Number(document.getElementById('comments').value)||0),v=Math.max(0,Number(document.getElementById('views').value)||0);document.getElementById('trackerResult').textContent=v?`Like + comment rate by views: ${((l+c)/v*100).toFixed(2)}%. This is a simple estimate, not an official platform metric.`:'Enter a view count greater than zero.'}
+function makeHashtags(){let t=document.getElementById('hashTopic').value.trim().replace(/[^a-z0-9]/gi,'');if(!t){document.getElementById('hashResult').textContent='Enter a topic first.';return}document.getElementById('hashResult').textContent=`#${t} #${t}Tips #${t}Ideas #CreatorCommunity #BehindTheScenes #LearnOnTikTok`}
+document.getElementById('postDate').min=new Date().toISOString().slice(0,10);
+</script>
+</body></html>
